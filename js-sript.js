@@ -13,12 +13,18 @@ function rgb(opacity)
     return color;
 }
 
+//rgba
+let opacity = 0.1;
+const randomColor = rgb();
+
 //Creates the 16x16 grid
 for(let i = 0; i < 16; i++)
 {
     //creates the rows
     const i = document.createElement("div");
     i.setAttribute("style", "flex: 1; display: flex;");
+
+    //loops to create multiple squares
     for(let j = 0; j < 16; j++)
     {
         //creates the squares
@@ -26,22 +32,22 @@ for(let i = 0; i < 16; i++)
         j.setAttribute("style", "flex: 1; border: 1px solid black;");
         i.appendChild(j);
 
-        //rgba
-        let opacity = 0.1;
-        const randomColor = rgb();
+        
         //colors the squares when hovered
         j.addEventListener("mouseover", () => {
             j.setAttribute("style", "flex: 1; border: 1px solid;");
             j.style.backgroundColor = rgb(opacity);//rgba
             opacity += 0.1;
-        });
-        
+        }); 
     }
     container.appendChild(i);
 }
 
 //creates new grid
 newGrid.addEventListener("click", () => {
+    //reset opacity
+    opacity = 0.1;
+
     //asks for size of new grid
     let size = prompt("What size would you like the new grid to be?(Max 100)", "16");
     //checks if user pressed cancel on prompt
@@ -75,10 +81,6 @@ newGrid.addEventListener("click", () => {
                 const j = document.createElement("div");
                 j.setAttribute("style", "flex: 1; border: 1px solid black;");
                 i.appendChild(j);
-                
-                //rgba
-                let opacity = 0.1;
-                const randomColor = rgb();
                 //colors the squares when hovered
                 j.addEventListener("mouseover", () => {
                     j.setAttribute("style", "flex: 1; border: 1px solid;");
