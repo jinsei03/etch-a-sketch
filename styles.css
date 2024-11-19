@@ -1,0 +1,38 @@
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    
+}
+
+#container
+{
+    display: flex;
+    flex-wrap: wrap;
+    height: 512px;
+    width: 512px;
+    flex-shrink: 0;
+    border: 1px solid black;
+    flex-direction: column;
+}
+
+#new
+{
+    margin-bottom: 20px;
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+#new:hover
+{
+    cursor: pointer;
+    color:white;
+    background-color: black;
+}
+
